@@ -1,0 +1,6 @@
+hornet_rulers:
+    build: .
+    ports:
+      - '3204:3204'
+    environment:
+        DATABASE: urls.sqlite3

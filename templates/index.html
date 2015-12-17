@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Hornet rulers</title>
+        <style>{% include style.css %}</style>
+        <script>
+            function set_focus() {
+                var f = document.forms[0];
+                if (f.link.value == "") {
+                    f.link.focus();
+                } else {
+                    f.url.focus();
+                }
+            }
+        </script>
+    </head>
+    <body onload="set_focus()">
+        <form method="POST" class="box" action="/">
+            {{prefix}}/<input type="text" name="link" size=20 value="{{link}}" placeholder="link">
+            &#10137;
+            <input type="text" name="url" size=35 value="{{url}}" placeholder="http://example.com/">
+            <input type="submit" value="&#10003;">
+        </form>
+    </body>
+</html>

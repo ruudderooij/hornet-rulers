@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Hornet rulers</title>
+        <style>{% include style.css %}</style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            function set_focus() {
+                var f = document.forms[0];
+                if (f.link.value == "") {
+                    f.link.focus();
+                } else {
+                    f.url.focus();
+                }
+            }
+        </script>
+    </head>
+    <body onload="set_focus()">
+        <form method="POST" class="box" action="/">
+            Update <a href="{{prefix}}/{link}">{{prefix}}/{{link}}</a>
+            &#10137;
+            <a href="{{existing_url}}">{{existing_url}}</a> to
+            <a href="{{url}}">{{url}}</a>?
+            <input type="hidden" name="link" value="{{link}}">
+            <input type="hidden" name="url" value="{{url}}">
+            <input type="submit" name="confirmed" value="&#10003;">
+        </form>
+    </body>
+</html>
