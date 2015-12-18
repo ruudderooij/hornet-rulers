@@ -41,7 +41,6 @@ class URLManager:
 
     def __init__(self, filename):
         self.db = sqlite3.connect(filename)
-        self.threadpool = concurrent.futures.ThreadPoolExecutor()
         with self.db:
             cursor = self.db.cursor()
             cursor.execute('CREATE TABLE IF NOT EXISTS urls (link TEXT, url TEXT);')
